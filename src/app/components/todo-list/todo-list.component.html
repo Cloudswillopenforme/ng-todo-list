@@ -1,6 +1,6 @@
 <ul>
-    <li
+    <app-todo-item
         *ngFor="let todo of todos"
-        [ngClass]="{'completed': todo.completed}"
-    >{{ todo.title }}</li>
+        [todo]="todo"
+    ></app-todo-item>
 </ul>

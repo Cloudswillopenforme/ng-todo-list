@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Todo from '../../models/todo.interface';
 
 @Component({
   selector: 'app-todo-list',
@@ -7,12 +8,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoListComponent implements OnInit {
 
-  title: string = '';
+  todos: Array<Todo> = [
+    {
+      "id": 2,
+      "title": "Send a copy of the contract to Lucy",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "Call mom",
+      "completed": true
+    },
+    {
+      "id": 4,
+      "title": "Book a restaurant for the evening",
+      "completed": true
+    },
+    {
+      "title": "Walk the dog",
+      "completed": false,
+      "id": 7
+    }
+  ]
 
   constructor() { }
 
   ngOnInit(): void {
-    this.title = 'my app';
   }
 
 }

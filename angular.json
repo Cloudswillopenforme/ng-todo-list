@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-todo-list"
+    }
+  },
+  "defaultProject": "ng-todo-list",
+  "cli": {
+    "analytics": "46277f22-062d-4f33-8a65-bcece6d0631d"
+  }
 }

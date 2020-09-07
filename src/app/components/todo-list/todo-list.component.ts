@@ -22,8 +22,18 @@ export class TodoListComponent implements OnInit {
     );
   }
 
+  handleGetTodos(): void {
+    this.todosService.getTodos().subscribe(res => {
+      this.todos = res;
+    }
+    );
+  }
+
   handleDeleteTodo(todo: Todo): void {
-    this.todos = this.todos.filter(el => el !== todo);
+    this.todosService.deleteTodo(todo).subscribe(res => {
+      this.handleGetTodos();
+    }
+    );
   }
 
 }

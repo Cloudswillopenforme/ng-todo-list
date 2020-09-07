@@ -1,38 +1,33 @@
 import { Injectable } from '@angular/core';
 import Todo from '../models/todo.interface';
 import { of, Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
 
-  todos: Array<Todo> = [
-    {
-      "id": 2,
-      "title": "Send a copy of the contract to Lucy",
-      "completed": false
-    },
-    {
-      "id": 3,
-      "title": "Call mom",
-      "completed": true
-    },
-    {
-      "id": 4,
-      "title": "Book a restaurant for the evening",
-      "completed": true
-    },
-    {
-      "title": "Walk the dog",
-      "completed": false,
-      "id": 7
-    },
-  ]
+  baseUrl: string = 'http://localhost:3000'
+  todosUrl: string = 'todos'
 
-  constructor() { }
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
+
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getTodos(): Observable<Todo[]> {
-    return of(this.todos);
+    return this.http.get<Todo[]>(`${this.baseUrl}/${this.todosUrl}`);
   }
+
+  deleteTodo(todo: Todo): Observable<any> {
+    const url = `${this.baseUrl}/${this.todosUrl}/${todo.id}`
+    return this.http.delete<Todo>(url, this.httpOptions);
+  }
+
 }

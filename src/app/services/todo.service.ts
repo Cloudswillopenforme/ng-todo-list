@@ -30,4 +30,9 @@ export class TodoService {
     return this.http.delete<Todo>(url, this.httpOptions);
   }
 
+  toggleTodo(todo: Todo): Observable<any> {
+    const url = `${this.baseUrl}/${this.todosUrl}/${todo.id}`
+    return this.http.put(url, todo, this.httpOptions);
+  }
+
 }

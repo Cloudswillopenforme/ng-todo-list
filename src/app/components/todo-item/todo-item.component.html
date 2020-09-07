@@ -1,5 +1,8 @@
 <mat-list-item>
-    <mat-checkbox [(ngModel)]="todo.completed">
+    <mat-checkbox
+        [(ngModel)]="todo.completed"
+        (change)="onToggleBtnClick()"
+    >
         <p [ngClass]="{'completed': todo.completed}">{{ todo.title }}</p>
     </mat-checkbox>
     <button

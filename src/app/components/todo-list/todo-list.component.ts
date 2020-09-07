@@ -36,4 +36,10 @@ export class TodoListComponent implements OnInit {
     );
   }
 
+  handleToggleTodo(todo: Todo): void {
+    this.todosService.toggleTodo(todo).subscribe(res => {
+      this.handleGetTodos();
+    })
+  }
+
 }

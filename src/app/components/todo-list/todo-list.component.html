@@ -3,5 +3,6 @@
         *ngFor="let todo of todos"
         [todo]="todo"
         (todoDeleted)="handleDeleteTodo($event)"
+        (todoToggled)="handleToggleTodo($event)"
     ></app-todo-item>
 </mat-list>

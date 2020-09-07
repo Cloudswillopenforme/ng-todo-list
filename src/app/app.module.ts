@@ -13,13 +13,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AboutComponent } from './components/about/about.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoListComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    AboutComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatButtonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

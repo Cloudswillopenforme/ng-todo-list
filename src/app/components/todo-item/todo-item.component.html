@@ -2,4 +2,10 @@
     <mat-checkbox [(ngModel)]="todo.completed">
         <p [ngClass]="{'completed': todo.completed}">{{ todo.title }}</p>
     </mat-checkbox>
+    <button
+        mat-icon-button
+        (click)="onDeleteBtnClick()"
+    >
+        <mat-icon>clear</mat-icon>
+    </button>
 </mat-list-item>

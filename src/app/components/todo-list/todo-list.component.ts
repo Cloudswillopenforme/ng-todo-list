@@ -28,12 +28,16 @@ export class TodoListComponent implements OnInit {
       "title": "Walk the dog",
       "completed": false,
       "id": 7
-    }
+    },
   ]
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  handleDeleteTodo(todo: Todo): void {
+    this.todos = this.todos.filter(el => el !== todo);
   }
 
 }

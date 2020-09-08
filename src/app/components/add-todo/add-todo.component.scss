@@ -1,0 +1,9 @@
+.add-new-form {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+
+  .add-new-form__input {
+    width: 75%;
+  }
+}

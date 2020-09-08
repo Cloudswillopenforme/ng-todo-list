@@ -16,7 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './components/about/about.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
+import { AddTodoComponent } from './components/add-todo/add-todo.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     TodoListComponent,
     TodoItemComponent,
     AboutComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddTodoComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatButtonModule,
     FormsModule,
     HttpClientModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

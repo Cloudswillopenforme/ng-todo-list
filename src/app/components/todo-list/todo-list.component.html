@@ -1,8 +1,11 @@
-<mat-list>
-    <app-todo-item
-        *ngFor="let todo of todos"
-        [todo]="todo"
-        (todoDeleted)="handleDeleteTodo($event)"
-        (todoToggled)="handleToggleTodo($event)"
-    ></app-todo-item>
-</mat-list>
+<div>
+    <app-add-todo (newTodoItemAdded)="handleAddTodo($event)"></app-add-todo>
+    <mat-list>
+        <app-todo-item
+            *ngFor="let todo of todos"
+            [todo]="todo"
+            (todoDeleted)="handleDeleteTodo($event)"
+            (todoToggled)="handleToggleTodo($event)"
+        ></app-todo-item>
+    </mat-list>
+</div>

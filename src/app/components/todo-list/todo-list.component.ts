@@ -42,4 +42,10 @@ export class TodoListComponent implements OnInit {
     })
   }
 
+  handleAddTodo(todo: Todo): void {
+    this.todosService.addTodo(todo).subscribe(res =>
+      this.handleGetTodos()
+    )
+  }
+
 }
